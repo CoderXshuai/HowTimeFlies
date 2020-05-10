@@ -1,21 +1,32 @@
 package com.example.howtimeflies.base;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.transition.Fade;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.howtimeflies.util.ActivityCollector;
 import com.example.howtimeflies.util.ToastUtils;
+import com.xuexiang.xui.XUI;
 
 /**
  * @author coderXshuai
  */
 public class BaseActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        //XUI
+        XUI.initTheme(this);
+        //进入动画设置
+        getWindow().setEnterTransition(new Fade().setDuration(1000));
+        //退出动画设置
+        getWindow().setExitTransition(new Fade().setDuration(1000));
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
     }
