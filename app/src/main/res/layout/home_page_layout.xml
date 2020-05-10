@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_page_bg">
+
+    <com.xuexiang.xui.widget.button.ButtonView
+            android:id="@+id/buttonView8"
+            style="@style/ButtonView.Blue"
+            android:layout_width="248px"
+            android:layout_height="130px"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="472dp"
+            android:layout_marginEnd="68dp"
+            android:text="登录"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonView3"
+            app:layout_constraintHorizontal_bias="0.096"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+    <com.xuexiang.xui.widget.button.ButtonView
+            android:id="@+id/buttonView3"
+            style="@style/ButtonView.Blue"
+            android:layout_width="248px"
+            android:layout_height="130px"
+            android:layout_marginEnd="60dp"
+            android:text="注册"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonView8"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
