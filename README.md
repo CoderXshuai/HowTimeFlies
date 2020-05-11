@@ -23,14 +23,14 @@ register_bg:注册界面背景
 ### 布局：layout
 home_page_layout:第一次进入时布局设置
 
-login_page_layout:登录界面，上面的图标还没完全搞定
+login_page_layout:登录界面
 
-register_page_layout:注册界面，上面的图标还没完全搞定
-
+register_page_layout:注册界面
 ##  src文件
 
 ### base
 BaseActivity:基础活动比如XUI的绑定、设置默认动画切换样式，供所有活动继承，具体怎么用不懂照搬学长当时给的模板
+### 主界面
 
 HomeActivity:首页，只实现单独的演示功能，暂时未深入
 
