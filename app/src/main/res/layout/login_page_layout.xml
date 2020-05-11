@@ -6,14 +6,14 @@
 
 
     <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="300px"
+            android:layout_height="150px"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
-            android:src="@drawable/default_icon" />
+            android:src="@drawable/login_icon" />
 
     <EditText
-            android:id="@+id/user_name"
+            android:id="@+id/login_username"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
@@ -31,8 +31,8 @@
             android:textColorHint="#a3a3a3"
             android:textSize="14sp" />
 
-    <EditText
-            android:id="@+id/password"
+    <com.xuexiang.xui.widget.edittext.PasswordEditText
+            android:id="@+id/login_password"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
@@ -52,8 +52,8 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="15dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
 
         <com.xuexiang.xui.widget.button.ButtonView
                 android:id="@+id/login_submit_button"

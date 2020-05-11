@@ -6,14 +6,14 @@
         android:orientation="vertical">
 
     <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="300px"
+            android:layout_height="150px"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="25dp"
-            android:src="@drawable/default_icon" />
+            android:src="@drawable/register_icon" />
 
     <EditText
-            android:id="@+id/user_name"
+            android:id="@+id/register_username"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
@@ -31,15 +31,15 @@
             android:textColorHint="#a3a3a3"
             android:textSize="14sp" />
 
-    <EditText
-            android:id="@+id/password"
+    <com.xuexiang.xui.widget.edittext.PasswordEditText
+            android:id="@+id/register_password"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:background="@drawable/xui_config_bg_edittext"
-            android:drawableLeft="@drawable/psw_icon"
+            android:drawableStart="@drawable/psw_icon"
             android:drawablePadding="10dp"
             android:hint="请输入密码"
             android:inputType="textPassword"
@@ -49,7 +49,7 @@
             android:textColorHint="#a3a3a3"
             android:textSize="14sp" />
 
-    <EditText
+    <com.xuexiang.xui.widget.edittext.PasswordEditText
             android:id="@+id/password_again"
             android:layout_width="fill_parent"
             android:layout_height="48dp"
@@ -74,7 +74,7 @@
             android:paddingTop="15dp">
 
         <com.xuexiang.xui.widget.button.ButtonView
-                android:id="@+id/home_login_button"
+                android:id="@+id/register_submit_button"
                 style="@style/ButtonView.Blue"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -88,7 +88,7 @@
                 android:textSize="18sp" />
 
         <com.xuexiang.xui.widget.button.ButtonView
-                android:id="@+id/login_cancel_button"
+                android:id="@+id/register_cancel_button"
                 style="@style/ButtonView.Blue"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

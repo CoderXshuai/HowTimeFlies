@@ -24,9 +24,9 @@ public class BaseActivity extends AppCompatActivity {
         //XUI
         XUI.initTheme(this);
         //进入动画设置
-        getWindow().setEnterTransition(new Fade().setDuration(1000));
+        getWindow().setEnterTransition(new Fade().setDuration(500));
         //退出动画设置
-        getWindow().setExitTransition(new Fade().setDuration(1000));
+        getWindow().setExitTransition(new Fade().setDuration(500));
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
     }

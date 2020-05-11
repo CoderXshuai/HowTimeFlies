@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
@@ -22,7 +21,7 @@ import butterknife.OnClick;
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.home_login_button)
     ButtonView loginButton;
-    @BindView(R.id.home_login_button)
+    @BindView(R.id.home_register_button)
     ButtonView registerButton;
 
     //为了实现动画效果最低API为21
@@ -43,12 +42,14 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.home_login_button:
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                Intent loginIntent = new Intent(HomeActivity.this, LoginActivity.class);
                 //为了实现切换的动画效果所加代码
-                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+                startActivity(loginIntent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
             case R.id.home_register_button:
-                Toast.makeText(HomeActivity.this, "register_button", Toast.LENGTH_SHORT).show();
+                Intent registerIntent = new Intent(HomeActivity.this, RegisterActivity.class);
+                //为了实现切换的动画效果所加代码
+                startActivity(registerIntent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
                 break;
             default:
                 break;

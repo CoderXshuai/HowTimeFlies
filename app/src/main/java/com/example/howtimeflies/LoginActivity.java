@@ -23,10 +23,14 @@ import butterknife.OnClick;
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.to_register_text)
     TextView toRegister;
-    @BindView(R.id.home_login_button)
+    @BindView(R.id.login_submit_button)
     ButtonView loginButton;
-    @BindView(R.id.user_name)
-    EditText userName;
+    @BindView(R.id.login_cancel_button)
+    ButtonView cancelButton;
+    @BindView(R.id.login_username)
+    EditText username;
+    @BindView(R.id.login_password)
+    EditText password;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -36,7 +40,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.to_register_text, R.id.home_login_button})
+    @OnClick({R.id.to_register_text, R.id.login_submit_button, R.id.login_cancel_button})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -47,7 +51,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 Toast.makeText(LoginActivity.this, "login_button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.login_cancel_button:
-                userName.setText(null);
+                username.setText(null);
+                password.setText(null);
                 break;
             default:
                 break;

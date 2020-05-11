@@ -13,9 +13,12 @@
             android:theme="@style/AppTheme"
             tools:ignore="ExtraText">
         <activity
-                android:name=".HomeActivity"
+                android:name=".LoginActivity"
                 android:exported="true" />
-        <activity android:name=".LoginActivity">
+        <activity
+                android:name=".RegisterActivity"
+                android:exported="true" />
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
