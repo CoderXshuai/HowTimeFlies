@@ -1,12 +1,9 @@
-package com.example.howtimeflies;
+package com.example.howtimeflies.activity;
 
 import android.app.Application;
 
 import com.xuexiang.xui.XUI;
 
-/**
- * @author coderXshuai
- */
 public class MyApplication extends Application {
     @Override
     public void onCreate() {

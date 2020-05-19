@@ -1,4 +1,4 @@
-package com.example.howtimeflies;
+package com.example.howtimeflies.activity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.howtimeflies.R;
 import com.example.howtimeflies.base.BaseActivity;
 import com.xuexiang.xui.widget.button.ButtonView;
 
@@ -15,9 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * @author coderXshuai
- */
+
 public class HomeActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.home_login_button)
     ButtonView loginButton;

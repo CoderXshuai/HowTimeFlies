@@ -1,4 +1,4 @@
-package com.example.howtimeflies;
+package com.example.howtimeflies.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.example.howtimeflies.R;
 import com.example.howtimeflies.base.BaseActivity;
 
 import butterknife.ButterKnife;

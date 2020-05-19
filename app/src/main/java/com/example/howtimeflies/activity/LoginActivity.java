@@ -1,4 +1,4 @@
-package com.example.howtimeflies;
+package com.example.howtimeflies.activity;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.example.howtimeflies.R;
 import com.example.howtimeflies.base.BaseActivity;
 import com.xuexiang.xui.widget.button.ButtonView;
 
@@ -17,9 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * @author coderXshuai
- */
+
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
     @BindView(R.id.to_register_text)
     TextView toRegister;
