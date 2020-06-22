@@ -12,6 +12,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//      添加依赖增加方法数
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -48,4 +50,15 @@ dependencies {
 
 //    MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+//    LeanCloud
+//    存储服务
+    implementation 'cn.leancloud:storage-android:6.5.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+//     即时通讯服务
+    implementation 'cn.leancloud:realtime-android:6.5.6'
+
+//    添加依赖增加方法数
+    implementation 'com.android.support:multidex:1.0.3'
+
 }
