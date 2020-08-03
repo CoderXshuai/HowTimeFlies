@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--底部导航栏-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/nav_time"
+            android:icon="@drawable/ic_time"
+            android:title="@string/menu_time" />
+
+    <item
+            android:id="@+id/nav_near"
+            android:icon="@drawable/ic_near"
+            android:title="@string/menu_near" />
+
+    <item
+            android:id="@+id/nav_talk"
+            android:icon="@drawable/ic_talk"
+            android:title="@string/menu_talk" />
+
+    <item
+            android:id="@+id/nav_person"
+            android:icon="@drawable/ic_person"
+            android:title="@string/menu_person" />
+</menu>

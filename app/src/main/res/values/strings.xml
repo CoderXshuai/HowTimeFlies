@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HowTimeFlies</string>
+    <string name="menu_time">时长分配</string>
+    <string name="menu_near">附近的人</string>
+    <string name="menu_talk">我的聊天</string>
+    <string name="menu_person">个人中心</string>
 </resources>
