@@ -1,12 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#81D2FF"
         android:orientation="vertical">
+
+    <com.xuexiang.xui.widget.textview.label.LabelTextView
+            android:id="@+id/tv_total_time"
+            android:layout_width="621px"
+            android:layout_height="69px"
+            android:layout_gravity="center"
+            android:layout_marginTop="31px"
+            android:fontFamily="Arial"
+            android:text="今日总时长：6h 38min"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="60px"
+            android:textStyle="bold" />
+
+    <com.xuexiang.xui.widget.textview.label.LabelTextView
+            android:id="@+id/tv_judge"
+            android:layout_width="621px"
+            android:layout_height="69px"
+            android:layout_gravity="center"
+            android:layout_marginTop="31px"
+            android:fontFamily="Arial"
+            android:text="为你打call！也要注意休息哦~"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="42px"
+            android:textStyle="bold" />
+
+    <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/bar_chart"
+            android:layout_width="875px"
+            android:layout_height="500px"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/xui_config_color_white" />
+
     <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/pie_chart"
-            android:layout_width="457px"
-            android:layout_height="457px"
+            android:layout_width="875px"
+            android:layout_height="455px"
+            android:layout_marginTop="28px"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="303px" />
+            android:background="@color/xui_config_color_white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            tools:listitem="@layout/adapter_time_item" />
 </LinearLayout>

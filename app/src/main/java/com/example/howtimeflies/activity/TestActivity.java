@@ -33,31 +33,33 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+public class TestActivity extends BaseActivity {
 
-public class ShowTimeActivity extends BaseActivity {
     @BindView(R.id.pie_chart)
     PieChart pieChart;
     @BindView(R.id.bar_chart)
     BarChart barChart;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_time_page_layout);
         ButterKnife.bind(this);
+        //柱状图
         List<Float> data = new ArrayList<>();
         data.add(30f);
         data.add(30f);
         data.add(30f);
         data.add(20f);
         setPieChart(data, pieChart);
+        //饼图
         List<Float> floatList = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
             floatList.add((float) (Math.random() * 30));
         }
         setBarChart(floatList, barChart);
     }
+
 
     private void setBarChart(List<Float> YDataSet, BarChart barChart) {
         BarData barData;
@@ -193,5 +195,4 @@ public class ShowTimeActivity extends BaseActivity {
         //刷新
         pieChart.invalidate();
     }
-
 }

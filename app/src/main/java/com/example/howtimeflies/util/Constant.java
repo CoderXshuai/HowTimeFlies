@@ -1,5 +1,9 @@
 package com.example.howtimeflies.util;
 
+import android.graphics.Color;
+
+import java.util.ArrayList;
+
 /**
  * 全局常量类
  */
@@ -23,5 +27,36 @@ public class Constant {
             "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=934540279,4028245722&fm=15&gp=0.jpg",//综艺饭:胖轩偷看夏天洗澡掀波澜
             "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=934540279,4028245722&fm=15&gp=0.jpg",//碟中谍4:阿汤哥高塔命悬一线,超越不可能
     };
+    public static final String[] X_DATA_SET = new String[]{
+            "一", "二", "三", "四", "五", "六", "日"
+    };
+    public static final ArrayList<Integer> BAR_COLORS = new ArrayList<>();
+    public static final ArrayList<String> PIE_TYPES = new ArrayList<>();
+    public static final ArrayList<Integer> PIE_COLORS = new ArrayList<>();
 
+    static {
+        BAR_COLORS.add(Color.parseColor("#81D2FF"));
+        BAR_COLORS.add(Color.parseColor("#FCD2E7"));
+        BAR_COLORS.add(Color.parseColor("#FBFF81"));
+        BAR_COLORS.add(Color.parseColor("#81FF9B"));
+        BAR_COLORS.add(Color.parseColor("#EF81FF"));
+        BAR_COLORS.add(Color.parseColor("#007CFF"));
+        BAR_COLORS.add(Color.parseColor("#FFB681"));
+    }
+
+    static {
+        PIE_TYPES.add("学习类");
+        PIE_TYPES.add("影音类");
+        PIE_TYPES.add("社交类");
+        PIE_TYPES.add("资讯类");
+        PIE_TYPES.add("其它类");
+    }
+
+    static {
+        PIE_COLORS.add(Color.parseColor("#ED7D31"));
+        PIE_COLORS.add(Color.parseColor("#5B9BD5"));
+        PIE_COLORS.add(Color.parseColor("#FFC000"));
+        PIE_COLORS.add(Color.parseColor("#A5A5A5"));
+        PIE_COLORS.add(Color.parseColor("#FFB681"));
+    }
 }

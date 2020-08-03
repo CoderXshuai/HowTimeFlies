@@ -12,6 +12,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //支持svg矢量图
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -48,4 +50,7 @@ dependencies {
 
 //    MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //processBar
+    implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
 }

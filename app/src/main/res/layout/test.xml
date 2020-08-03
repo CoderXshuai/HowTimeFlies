@@ -1,38 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".activity.HomeActivity">
 
-    <com.xuexiang.xui.widget.banner.widget.banner.SimpleImageBanner
-            android:id="@+id/sib_the_most_comlex_usage"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            app:bb_barColor="#88000000"
-            app:bb_barPaddingBottom="5dp"
-            app:bb_barPaddingLeft="10dp"
-            app:bb_barPaddingRight="10dp"
-            app:bb_barPaddingTop="5dp"
-            app:bb_delay="2"
-            app:bb_indicatorCornerRadius="3dp"
-            app:bb_indicatorGap="8dp"
-            app:bb_indicatorGravity="RIGHT"
-            app:bb_indicatorHeight="6dp"
-            app:bb_indicatorSelectColor="#ffffff"
-            app:bb_indicatorStyle="CORNER_RECTANGLE"
-            app:bb_indicatorUnselectColor="#88ffffff"
-            app:bb_indicatorWidth="6dp"
-            app:bb_isAutoScrollEnable="true"
-            app:bb_isBarShowWhenLast="true"
-            app:bb_isIndicatorShow="true"
-            app:bb_isLoopEnable="true"
-            app:bb_isTitleShow="true"
-            app:bb_period="10"
-            app:bb_scale="0.5625"
-            app:bb_textColor="#ffffff"
-            app:bb_textSize="13.5sp" />
+    <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/pie_chart2"
+            android:layout_width="875px"
+            android:layout_height="455px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="38px" />
 
 </LinearLayout>

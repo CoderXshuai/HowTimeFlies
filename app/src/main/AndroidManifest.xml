@@ -19,7 +19,7 @@
                 android:name=".activity.RegisterActivity"
                 android:exported="true" />
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.ShowTimeActivity">
+        <activity android:name=".activity.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
