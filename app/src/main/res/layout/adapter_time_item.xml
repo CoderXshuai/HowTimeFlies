@@ -3,7 +3,6 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/time_item"
         android:layout_width="331dp"
-        android:foreground="@drawable/bd_show_time"
         app:cardBackgroundColor="@color/xui_config_color_transparent"
         app:cardElevation="0dp"
         android:layout_height="wrap_content"
@@ -49,7 +48,7 @@
                         android:layout_width="187dp"
                         android:layout_height="11dp"
                         app:progress_reached_bar_height="11dp"
-                        app:progress_reached_color="#B1D3F8"
+                        app:progress_reached_color="#4EB9FF"
                         app:progress_text_color="#3498DB"
                         app:progress_text_size="10sp"
                         app:progress_text_visibility="invisible"
@@ -84,9 +83,11 @@
                         android:layout_height="match_parent"
                         android:text="学习类："
                         android:textSize="15dp"
+                        android:textColor="@color/xui_config_color_white"
                         android:textStyle="bold" />
 
                 <TextView
+                        android:textColor="@color/xui_config_color_white"
                         android:id="@+id/tv_hour"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -95,6 +96,7 @@
                         android:textStyle="bold" />
 
                 <TextView
+                        android:textColor="@color/xui_config_color_white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="h "
@@ -102,6 +104,7 @@
                         android:textStyle="bold" />
 
                 <TextView
+                        android:textColor="@color/xui_config_color_white"
                         android:id="@+id/tv_minute"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -110,6 +113,7 @@
                         android:textStyle="bold" />
 
                 <TextView
+                        android:textColor="@color/xui_config_color_white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="min"

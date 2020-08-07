@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
         android:background="@drawable/bg_show_time"
         android:orientation="vertical">
 
@@ -14,7 +15,7 @@
             android:fontFamily="Arial"
             android:text="今日总时长：6h 38min"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFFFA0"
             android:textSize="22sp"
             android:textStyle="bold" />
 
@@ -27,14 +28,14 @@
             android:fontFamily="Arial"
             android:text="为你打call！也要注意休息哦~"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#FFFFA0"
             android:textSize="16dp"
             android:textStyle="bold" />
 
     <com.github.mikephil.charting.charts.BarChart
             android:layout_width="333dp"
             android:id="@+id/bar_chart"
-            android:layout_height="190dp"
+            android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/bd_show_time" />
 
@@ -47,15 +48,13 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/bd_show_time" />
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--            android:background="@drawable/bd_show_time"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center_horizontal"-->
-    <!--            tools:listitem="@layout/adapter_time_item" />-->
-
-    <include layout="@layout/adapter_time_item" />
-
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/bd_show_time"
+            tools:listitem="@layout/adapter_time_item" />
+    <!--    下面的代码是单独引入一个adapter查看效果的代码,如果想要实现,需要把recycleView注释掉测试-->
     <!--    <include layout="@layout/adapter_time_item" />-->
 
     <include layout="@layout/fragment_bottom_view" />

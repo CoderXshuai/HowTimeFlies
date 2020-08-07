@@ -66,6 +66,8 @@ public class TestActivity extends BaseActivity {
 
 
     private void setBarChart(List<Float> YDataSet, BarChart barChart) {
+        barChart.setExtraTopOffset(30);
+        barChart.setExtraBottomOffset(10);
         BarData barData;
         List<BarEntry> barEntryList = new ArrayList<>();
         ArrayList<Integer> dataColor = Constant.BAR_COLORS;
@@ -82,7 +84,7 @@ public class TestActivity extends BaseActivity {
         //设置条形图文字
         description.setText("近七天使用情况");
         //自定义位置
-        description.setPosition(450, 40);
+        description.setPosition(450, 65);
         //简介文字颜色
         description.setTextColor(Color.WHITE);
         //简介文字大小
@@ -95,8 +97,10 @@ public class TestActivity extends BaseActivity {
         barChart.setDescription(description);
         // 设置是否可以缩放
         barChart.setScaleEnabled(false);
+
         // 设置柱子的宽度
         barData.setBarWidth(0.5f);
+        barData.setValueTextSize(10f);
         // 获取 x 轴
         XAxis xAxis = barChart.getXAxis();
         xAxis.setTextColor(Color.parseColor("#007CFF"));
@@ -152,13 +156,13 @@ public class TestActivity extends BaseActivity {
         dataSet.setColors(pieColors);
         PieData pieData = new PieData(dataSet);
         //设置占比数字大小
-        pieData.setValueTextSize(15f);
+        pieData.setValueTextSize(13f);
         //百分制显示
         pieData.setValueFormatter(new PercentFormatter(pieChart));
         //数值颜色
-        pieData.setValueTextColor(Color.WHITE);
+        pieData.setValueTextColor(Color.BLACK);
         //数值加粗
-        pieData.setValueTypeface(Typeface.DEFAULT_BOLD);
+//        pieData.setValueTypeface(Typeface.DEFAULT_BOLD);
         //设置为非空心圆
         pieData.setDrawValues(true);
         //设置数值
@@ -168,7 +172,7 @@ public class TestActivity extends BaseActivity {
         //去除饼图内标签
         pieChart.setDrawEntryLabels(false);
         //设置位置
-        pieChart.setExtraOffsets(0, 5, 0, 0);
+        pieChart.setExtraOffsets(0, 15, 0, 0);
         //设置全圆
         pieChart.setDrawHoleEnabled(false);
         pieChart.getDescription().setEnabled(true);
@@ -176,7 +180,7 @@ public class TestActivity extends BaseActivity {
         Legend legend = pieChart.getLegend();
         legend.setDirection(Legend.LegendDirection.LEFT_TO_RIGHT);
         legend.setXOffset(20f);
-        legend.setYOffset(-20f);
+        legend.setYOffset(-10f);
         legend.setOrientation(Legend.LegendOrientation.VERTICAL);
         legend.setVerticalAlignment(Legend.LegendVerticalAlignment.CENTER);
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
@@ -185,7 +189,7 @@ public class TestActivity extends BaseActivity {
         //设置简介
         Description description = pieChart.getDescription();
         //设置位置
-        description.setPosition(450, 40);
+        description.setPosition(450, 70);
         //设置文字
         description.setText("今日使用情况");
         //文字大小
