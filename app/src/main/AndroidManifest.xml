@@ -12,6 +12,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="ExtraText">
+        <activity android:name=".activity.SimilarPersonActivity"></activity>
         <activity
                 android:name=".activity.LoginActivity"
                 android:exported="true" />

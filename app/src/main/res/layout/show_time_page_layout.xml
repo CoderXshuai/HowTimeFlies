@@ -2,56 +2,61 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:background="#81D2FF"
+        android:background="@drawable/bg_show_time"
         android:orientation="vertical">
 
     <com.xuexiang.xui.widget.textview.label.LabelTextView
             android:id="@+id/tv_total_time"
-            android:layout_width="621px"
-            android:layout_height="69px"
+            android:layout_width="236dp"
+            android:layout_height="26dp"
             android:layout_gravity="center"
-            android:layout_marginTop="31px"
+            android:layout_marginTop="11dp"
             android:fontFamily="Arial"
             android:text="今日总时长：6h 38min"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="60px"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
     <com.xuexiang.xui.widget.textview.label.LabelTextView
             android:id="@+id/tv_judge"
-            android:layout_width="621px"
-            android:layout_height="69px"
+            android:layout_width="236dp"
+            android:layout_height="26dp"
             android:layout_gravity="center"
-            android:layout_marginTop="31px"
+            android:layout_marginTop="11dp"
             android:fontFamily="Arial"
             android:text="为你打call！也要注意休息哦~"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="42px"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
     <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="333dp"
             android:id="@+id/bar_chart"
-            android:layout_width="875px"
-            android:layout_height="500px"
+            android:layout_height="190dp"
             android:layout_gravity="center_horizontal"
-            android:background="@color/xui_config_color_white" />
+            android:background="@drawable/bd_show_time" />
 
     <com.github.mikephil.charting.charts.PieChart
+            android:layout_width="333dp"
+            android:layout_height="173dp"
             android:id="@+id/pie_chart"
-            android:layout_width="875px"
-            android:layout_height="455px"
-            android:layout_marginTop="28px"
             android:layout_gravity="center_horizontal"
-            android:background="@color/xui_config_color_white" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bd_show_time" />
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            tools:listitem="@layout/adapter_time_item" />
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--            android:background="@drawable/bd_show_time"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_horizontal"-->
+    <!--            tools:listitem="@layout/adapter_time_item" />-->
+
+    <include layout="@layout/adapter_time_item" />
+
+    <!--    <include layout="@layout/adapter_time_item" />-->
 
     <include layout="@layout/fragment_bottom_view" />
 </LinearLayout>

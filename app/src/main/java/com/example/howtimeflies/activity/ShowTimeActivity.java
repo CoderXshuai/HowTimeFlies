@@ -150,7 +150,7 @@ public class ShowTimeActivity extends BaseActivity {
         //百分制显示
         pieData.setValueFormatter(new PercentFormatter(pieChart));
         //数值颜色
-        pieData.setValueTextColor(Color.BLACK);
+        pieData.setValueTextColor(Color.WHITE);
         //数值加粗
         pieData.setValueTypeface(Typeface.DEFAULT_BOLD);
         //设置为非空心圆

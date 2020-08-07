@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.example.howtimeflies.R;
 import com.example.howtimeflies.base.BaseActivity;
 import com.example.howtimeflies.util.Constant;
@@ -39,6 +40,8 @@ public class TestActivity extends BaseActivity {
     PieChart pieChart;
     @BindView(R.id.bar_chart)
     BarChart barChart;
+    @BindView(R.id.number_progress_bar)
+    NumberProgressBar progressBar;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class TestActivity extends BaseActivity {
             floatList.add((float) (Math.random() * 30));
         }
         setBarChart(floatList, barChart);
+        progressBar.setProgress(33);
     }
 
 
@@ -80,7 +84,7 @@ public class TestActivity extends BaseActivity {
         //自定义位置
         description.setPosition(450, 40);
         //简介文字颜色
-        description.setTextColor(Color.parseColor("#81D2FF"));
+        description.setTextColor(Color.WHITE);
         //简介文字大小
         description.setTextSize(15f);
         //简介文字对齐方式,居中
@@ -148,11 +152,11 @@ public class TestActivity extends BaseActivity {
         dataSet.setColors(pieColors);
         PieData pieData = new PieData(dataSet);
         //设置占比数字大小
-        pieData.setValueTextSize(12f);
+        pieData.setValueTextSize(15f);
         //百分制显示
         pieData.setValueFormatter(new PercentFormatter(pieChart));
         //数值颜色
-        pieData.setValueTextColor(Color.BLACK);
+        pieData.setValueTextColor(Color.WHITE);
         //数值加粗
         pieData.setValueTypeface(Typeface.DEFAULT_BOLD);
         //设置为非空心圆
@@ -187,7 +191,7 @@ public class TestActivity extends BaseActivity {
         //文字大小
         description.setTextSize(15f);
         //简介文字颜色
-        description.setTextColor(Color.parseColor("#81D2FF"));
+        description.setTextColor(Color.WHITE);
         //简介文字对齐方式,居中
         description.setTextAlign(Paint.Align.CENTER);
         //文字加粗
