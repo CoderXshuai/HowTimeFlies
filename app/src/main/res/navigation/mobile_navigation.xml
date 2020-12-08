@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_time">
+
+    <fragment
+        android:id="@+id/navigation_time"
+        android:name="com.example.howtimeflies.activity.ui.time.TimeFragment"
+        android:label="@string/menu_time"
+        tools:layout="@layout/fragment_time" />
+
+    <fragment
+        android:id="@+id/navigation_near"
+        android:name="com.example.howtimeflies.activity.ui.near.NearFragment"
+        android:label="@string/menu_near"
+        tools:layout="@layout/fragment_near" />
+
+    <fragment
+        android:id="@+id/navigation_talk"
+        android:name="com.example.howtimeflies.activity.ui.talk.TalkFragment"
+        android:label="@string/menu_talk"
+        tools:layout="@layout/fragment_talk" />
+    <fragment
+        android:id="@+id/navigation_person"
+        android:name="com.example.howtimeflies.activity.ui.person.PersonFragment"
+        android:label="@string/menu_person"
+        tools:layout="@layout/fragment_person" />
+</navigation>
