@@ -9,6 +9,16 @@
             android:layout_height="82dp"
             android:layout_marginStart="41dp"
             android:layout_marginTop="41dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_talk"
             tools:ignore="RtlSymmetry" />
+
+    <TextView
+            android:id="@+id/tv_similar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="41dp"
+            android:layout_marginTop="150dp"
+            android:text="@string/similar_level" />
 
 </androidx.cardview.widget.CardView>

@@ -4,6 +4,7 @@
     <string name="menu_near">附近的人</string>
     <string name="menu_talk">我的聊天</string>
     <string name="menu_person">个人中心</string>
+    <string name="similar_level">相似度：%d</string>
     <string name="title_activity_bottom_nav">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
