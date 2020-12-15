@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_near"
-        android:name="com.example.howtimeflies.activity.ui.near.NearFragment"
+        android:name="com.example.howtimeflies.activity.ui.similarity.SimilarityFragment"
         android:label="@string/menu_near"
-        tools:layout="@layout/fragment_near" />
+        tools:layout="@layout/fragment_similarity" />
 
     <fragment
         android:id="@+id/navigation_talk"
