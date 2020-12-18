@@ -8,8 +8,12 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.howtimeflies.R;
+import com.example.howtimeflies.activity.adapter.TimeAdapter;
+import com.example.howtimeflies.activity.entity.Time;
 import com.example.howtimeflies.base.BaseActivity;
 import com.example.howtimeflies.util.Constant;
 import com.github.mikephil.charting.charts.BarChart;
@@ -39,6 +43,7 @@ public class ShowTimeActivity extends BaseActivity {
     PieChart pieChart;
     @BindView(R.id.bar_chart)
     BarChart barChart;
+    List<Time> timeList;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -46,6 +51,14 @@ public class ShowTimeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_time_page_layout);
         ButterKnife.bind(this);
+        initTime();
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.time_rec_view);
+        //加载布局管理者
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        //加载适配器
+        TimeAdapter adapter = new TimeAdapter(timeList, this);
+        recyclerView.setAdapter(adapter);
         List<Float> data = new ArrayList<>();
         data.add(30f);
         data.add(30f);
@@ -198,4 +211,11 @@ public class ShowTimeActivity extends BaseActivity {
         pieChart.invalidate();
     }
 
+    private void initTime() {
+        timeList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Time time = new Time("学习类", R.drawable.user_name_icon, 30, 2, 30, "https://kim.plopco.com/");
+            timeList.add(time);
+        }
+    }
 }

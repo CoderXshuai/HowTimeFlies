@@ -10,5 +10,8 @@ public class MyApplication extends Application {
         super.onCreate();
         XUI.init(this);
         XUI.debug(true);
+//        ActivityLifecycleCallbacks
+//        ActivityLifeCycle lifecycleCallbacks = new ActivityLifeCycle();
+//        registerActivityLifecycleCallbacks(lifecycleCallbacks);
     }
 }
