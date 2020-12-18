@@ -1,4 +1,4 @@
-package com.example.howtimeflies.activity.entity;
+package com.example.howtimeflies.entity;
 
 import lombok.Data;
 

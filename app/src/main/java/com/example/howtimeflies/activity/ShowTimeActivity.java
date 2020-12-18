@@ -1,10 +1,14 @@
 package com.example.howtimeflies.activity;
 
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -13,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.howtimeflies.R;
 import com.example.howtimeflies.activity.adapter.TimeAdapter;
-import com.example.howtimeflies.activity.entity.Time;
 import com.example.howtimeflies.base.BaseActivity;
+import com.example.howtimeflies.entity.Time;
 import com.example.howtimeflies.util.Constant;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -52,6 +56,7 @@ public class ShowTimeActivity extends BaseActivity {
         setContentView(R.layout.show_time_page_layout);
         ButterKnife.bind(this);
         initTime();
+        getAllAppNames();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.time_rec_view);
         //加载布局管理者
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -217,5 +222,34 @@ public class ShowTimeActivity extends BaseActivity {
             Time time = new Time("学习类", R.drawable.user_name_icon, 30, 2, 30, "https://kim.plopco.com/");
             timeList.add(time);
         }
+    }
+
+    public void getAllAppNames() {
+        PackageManager pm = getPackageManager();
+        //获取到所有安装了的应用程序的信息，包括那些卸载了的，但没有清除数据的应用程序
+        List<PackageInfo> list2 = pm.getInstalledPackages(PackageManager.GET_UNINSTALLED_PACKAGES);
+        //PackageManager.GET_SHARED_LIBRARY_FILES==1024
+//        List<PackageInfo> list2=pm.getInstalledPackages(PackageManager.GET_SHARED_LIBRARY_FILES);
+        //PackageManager.GET_META_DATA==128
+//        List<PackageInfo> list2=pm.getInstalledPackages(PackageManager.GET_META_DATA);
+//        List<PackageInfo> list2=pm.getInstalledPackages(0);
+        //List<PackageInfo> list2=pm.getInstalledPackages(-10);
+        //List<PackageInfo> list2=pm.getInstalledPackages(10000);
+        int j = 0;
+
+        for (PackageInfo packageInfo : list2) {
+            //得到手机上已经安装的应用的名字,即在AndriodMainfest.xml中的app_name。
+            String appName = packageInfo.applicationInfo.loadLabel(getPackageManager()).toString();
+            //得到手机上已经安装的应用的图标,即在AndriodMainfest.xml中的icon。
+            Drawable drawable = packageInfo.applicationInfo.loadIcon(getPackageManager());
+            //得到应用所在包的名字,即在AndriodMainfest.xml中的package的值。
+            String packageName = packageInfo.packageName;
+            Log.e("=======aaa", "应用的名字:" + appName);
+            Log.e("=======bbbb", "应用的包名字:" + packageName);
+
+            j++;
+        }
+        Log.e("========cccccc", "应用的总个数:" + j);
+
     }
 }

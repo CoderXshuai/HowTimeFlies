@@ -203,4 +203,6 @@ public class TestActivity extends BaseActivity {
         //刷新
         pieChart.invalidate();
     }
+
+
 }

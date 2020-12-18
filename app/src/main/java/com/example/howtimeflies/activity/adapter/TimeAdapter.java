@@ -12,14 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.howtimeflies.R;
-import com.example.howtimeflies.activity.entity.Time;
+import com.example.howtimeflies.entity.Time;
 import com.example.howtimeflies.util.ToastUtils;
 
 import java.util.List;
 
 public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.MyViewHold> {
     private final List<Time> timeList;
-    private Context mContext;
+    private final Context mContext;
 
     public TimeAdapter(List<Time> timeList, Context mContext) {
         this.timeList = timeList;
