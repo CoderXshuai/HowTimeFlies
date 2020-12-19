@@ -1,7 +1,10 @@
-package com.example.howtimeflies.activity.adapter;
+package com.example.howtimeflies.adapter;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,6 +36,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.MyViewHold> {
         this.mContext = mContext;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @NonNull
     @Override
     public MyViewHold onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,6 +52,7 @@ public class TimeAdapter extends RecyclerView.Adapter<TimeAdapter.MyViewHold> {
             AppInfo appInfo = appInfoList.findPackageNameByAppName(appName);
             intent.putExtra("appInfo", appInfo);
             mContext.startActivity(intent);
+            mContext.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation((Activity) mContext).toBundle());
         });
         return myViewHold;
     }

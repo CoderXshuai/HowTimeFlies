@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.howtimeflies.R;
-import com.example.howtimeflies.activity.adapter.TimeAdapter;
+import com.example.howtimeflies.adapter.TimeAdapter;
 import com.example.howtimeflies.base.BaseActivity;
 import com.example.howtimeflies.entity.AppInfo;
 import com.example.howtimeflies.entity.Time;

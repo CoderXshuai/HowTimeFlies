@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 import com.example.howtimeflies.R;
-import com.example.howtimeflies.activity.adapter.CommonRecyclerAdapter;
+import com.example.howtimeflies.adapter.CommonRecyclerAdapter;
 import com.example.howtimeflies.base.BaseActivity;
 import com.example.howtimeflies.databinding.ActivityAppUsageBinding;
 import com.example.howtimeflies.entity.AppInfo;
@@ -27,6 +27,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
 
 public class AppDetailActivity extends BaseActivity {
     private static final String TAG = "AppUsageActivity";

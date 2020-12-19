@@ -1,4 +1,4 @@
-package com.example.howtimeflies.activity.adapter;
+package com.example.howtimeflies.adapter;
 
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;

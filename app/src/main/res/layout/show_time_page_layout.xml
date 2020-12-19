@@ -58,5 +58,4 @@
     <!--    下面的代码是单独引入一个adapter查看效果的代码,如果想要实现,需要把recycleView注释掉测试-->
     <!--    <include layout="@layout/adapter_time_item" />-->
 
-    <include layout="@layout/fragment_bottom_view" />
 </LinearLayout>

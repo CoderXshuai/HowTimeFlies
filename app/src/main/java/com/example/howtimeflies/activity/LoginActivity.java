@@ -1,11 +1,12 @@
 package com.example.howtimeflies.activity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -39,15 +40,22 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         ButterKnife.bind(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @OnClick({R.id.to_register_text, R.id.login_submit_button, R.id.login_cancel_button})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.to_register_text:
-                Toast.makeText(LoginActivity.this, "to_register_text", Toast.LENGTH_SHORT).show();
+                //跳转到注册
+                Intent loginIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+                //为了实现切换的动画效果所加代码
+                startActivity(loginIntent, ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this).toBundle());
                 break;
             case R.id.login_submit_button:
-                Toast.makeText(LoginActivity.this, "login_button", Toast.LENGTH_SHORT).show();
+                //跳转到登录
+                Intent intent = new Intent(LoginActivity.this, ShowTimeActivity.class);
+                //为了实现切换的动画效果所加代码
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this).toBundle());
                 break;
             case R.id.login_cancel_button:
                 username.setText(null);
