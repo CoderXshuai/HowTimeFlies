@@ -1,5 +1,7 @@
 package com.example.howtimeflies.entity;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 import lombok.Data;
@@ -7,7 +9,7 @@ import lombok.Data;
 @Data
 public class Time implements Serializable {
     private Integer tid;
-    private Integer iconID;
+    private Bitmap iconID;
     private String type;
     private String appName;
     private Integer progressNum;
@@ -15,7 +17,7 @@ public class Time implements Serializable {
     private Integer studyMin;
     private String detailUrl;
 
-    public Time(Integer iconID, String type, String appName, Integer progressNum, Integer studyHour, Integer studyMin) {
+    public Time(Bitmap iconID, String type, String appName, Integer progressNum, Integer studyHour, Integer studyMin) {
         this.iconID = iconID;
         this.type = type;
         this.appName = appName;

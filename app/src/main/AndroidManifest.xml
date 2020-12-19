@@ -18,9 +18,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="ExtraText">
-        <activity
-                android:name=".activity.AppDetailActivity"
-                android:label="@string/title_activity_bottom_nav" />
+        <activity android:name=".activity.AppDetailActivity" />
         <activity android:name=".activity.SimilarPersonActivity" />
         <activity
                 android:name=".activity.LoginActivity"

@@ -1,6 +1,7 @@
 package com.example.howtimeflies.activity;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.format.DateUtils;
@@ -18,14 +19,13 @@ import com.example.howtimeflies.activity.adapter.CommonRecyclerAdapter;
 import com.example.howtimeflies.base.BaseActivity;
 import com.example.howtimeflies.databinding.ActivityAppUsageBinding;
 import com.example.howtimeflies.entity.AppInfo;
-import com.example.howtimeflies.task.LoadTask;
+import com.example.howtimeflies.task.LoadAppUsageTask;
 import com.example.howtimeflies.util.AppUsageUtil;
 import com.example.howtimeflies.util.JDateKit;
-import com.example.howtimeflies.util.JListKit;
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.List;
 
 public class AppDetailActivity extends BaseActivity {
@@ -33,10 +33,10 @@ public class AppDetailActivity extends BaseActivity {
     private static final String[] TAB_NAMES = {"今日数据", "昨日数据", "本周数据", "本月数据", "年度数据"};
     private ActivityAppUsageBinding mHolder;
     private List<AppInfo> mItems;
-    private AppInfo appInfo;
     private CommonRecyclerAdapter<AppInfo> mAdapter;
     private boolean isGoToGrand = false;// 是否去过授权页面
-    private LoadTask mLoadTask;
+    private LoadAppUsageTask mLoadAppUsageTask;
+    private AppInfo appInfo;
     private long maxTime;// 当前列表中 使用最久的APP时间 用于计算进度条百分比
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -48,6 +48,9 @@ public class AppDetailActivity extends BaseActivity {
         setContentView(mHolder.getRoot());
         // 初始化Tab
         int c = 0;
+        Intent intent = getIntent();
+        appInfo = (AppInfo) intent.getParcelableExtra("appInfo");
+
         TabLayout tabLayout = mHolder.tabCondition;
         for (String name : TAB_NAMES) {
             TabLayout.Tab tab = tabLayout.newTab();
@@ -129,32 +132,22 @@ public class AppDetailActivity extends BaseActivity {
         // setTitle("数据分析中...");
         showLoading("数据分析中...");
         // a task can be executed only once,init is required every time
-        mLoadTask = new LoadTask(beginTime, endTime, app -> {
-//            mItems = list;
-            appInfo = app;
-            initAdapter();
-        });
-        mLoadTask.execute();
+        mItems = new ArrayList<>();
+        mItems.add(appInfo);
+        initAdapter();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mLoadTask != null) {
-            mLoadTask.cancel(true);
-            mLoadTask = null;
+        if (mLoadAppUsageTask != null) {
+            mLoadAppUsageTask.cancel(true);
+            mLoadAppUsageTask = null;
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void initAdapter() {
-        if (JListKit.isNotEmpty(mItems)) {
-            Collections.sort(mItems);
-            Collections.sort(mItems);// 按使用时长排序
-            maxTime = mItems.get(0).getUsageStats().getTotalTimeInForeground();
-        } else {
-            maxTime = 1;
-        }
         setTitle(String.format("%s (共%s条)", getTitle(), mItems.size()));
         if (mAdapter == null) {
             String fmt = "yyyy-MM-dd HH:mm:ss";
@@ -162,9 +155,9 @@ public class AppDetailActivity extends BaseActivity {
                 @Override
                 protected void convert(@NonNull BaseViewHolder helper, AppInfo item) {
                     helper.setText(R.id.id_tv_app_name, String.format("%s(%s)", item.getAppName(), item.getPackageName()));
-                    Drawable appIcon = item.getAppIcon();
+                    Bitmap appIcon = item.getAppIcon();
                     if (appIcon != null) {
-                        helper.setImageDrawable(R.id.id_iv_app_icon, appIcon);
+                        helper.setImageBitmap(R.id.id_iv_app_icon, appIcon);
                     } else {
                         helper.setImageResource(R.id.id_iv_app_icon, R.mipmap.ic_launcher);
                     }

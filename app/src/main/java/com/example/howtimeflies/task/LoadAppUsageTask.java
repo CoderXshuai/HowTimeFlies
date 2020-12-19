@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.example.howtimeflies.MyApplication;
 import com.example.howtimeflies.entity.AppInfo;
+import com.example.howtimeflies.util.CommonUtil;
 import com.example.howtimeflies.util.JDateKit;
 import com.example.howtimeflies.util.JListKit;
 
@@ -65,7 +66,6 @@ public class LoadAppUsageTask extends AsyncTask<Void, Void, ArrayList<AppInfo>> 
                 if (usageStats == null) continue;
                 long totalTimeInForeground = usageStats.getTotalTimeInForeground();
                 if (totalTimeInForeground <= 0) continue;// 小于1秒的都按照没有打开过处理
-
                 AppInfo AppInfo = new AppInfo(packageName, usageStats);
                 ApplicationInfo info = getAppInfo(packageName);
                 AppInfo.setAppInfo(info);
@@ -74,7 +74,7 @@ public class LoadAppUsageTask extends AsyncTask<Void, Void, ArrayList<AppInfo>> 
                     String label = (String) info.loadLabel(mPackageManager);
                     Drawable icon = info.loadIcon(mPackageManager);
                     AppInfo.setAppName(label);
-                    AppInfo.setAppIcon(icon);
+                    AppInfo.setAppIcon(CommonUtil.drawableToBitmap(icon));
                 } else {
                     AppInfo.setAppName("应用已卸载");
                     // Log.e(TAG, "已经找不到包名为[" + packageName + "]的应用");
@@ -118,7 +118,7 @@ public class LoadAppUsageTask extends AsyncTask<Void, Void, ArrayList<AppInfo>> 
                 String label = (String) info.loadLabel(mPackageManager);
                 Drawable icon = info.loadIcon(mPackageManager);
                 appInfo.setAppName(label);
-                appInfo.setAppIcon(icon);
+                appInfo.setAppIcon(CommonUtil.drawableToBitmap(icon));
             } else {
                 appInfo.setAppName("应用已卸载");
                 // Log.e(TAG, "已经找不到包名为[" + packageName + "]的应用");
