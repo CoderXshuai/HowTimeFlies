@@ -56,7 +56,7 @@ public class ShowTimeActivity extends BaseActivity {
         setContentView(R.layout.show_time_page_layout);
         ButterKnife.bind(this);
         initTime();
-        getAllAppNames();
+//        getAllAppNames();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.time_rec_view);
         //加载布局管理者
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -219,7 +219,7 @@ public class ShowTimeActivity extends BaseActivity {
     private void initTime() {
         timeList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            Time time = new Time("学习类", R.drawable.user_name_icon, 30, 2, 30, "https://kim.plopco.com/");
+            Time time = new Time(R.drawable.user_name_icon, "学习类", "QQ", 30, 2, 30);
             timeList.add(time);
         }
     }

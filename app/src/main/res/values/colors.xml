@@ -3,6 +3,9 @@
     <color name="colorPrimary">#299EE3</color>
     <color name="colorPrimaryDark">#299EE3</color>
     <color name="colorAccent">#299EE3</color>
+    <color name="mGreen">#53b679</color>
+    <color name="mBlack">#222222</color>
+    <color name="mGrayDark">#666666</color>
 
 
     <!--Toast，可自定义喜欢的颜色-->

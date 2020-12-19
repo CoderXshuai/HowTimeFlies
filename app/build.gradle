@@ -3,6 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+    viewBinding.enabled = true
+    dataBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.howtimeflies"
@@ -64,4 +68,6 @@ dependencies {
     implementation 'org.projectlombok:lombok:1.18.16'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+    //base
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
 }

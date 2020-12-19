@@ -1,17 +1,23 @@
 package com.example.howtimeflies.base;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Fade;
+import android.view.KeyEvent;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.howtimeflies.databinding.DialogLoadingBinding;
 import com.example.howtimeflies.util.ActivityCollector;
 import com.example.howtimeflies.util.ToastUtils;
 import com.xuexiang.xui.XUI;
+
+import java.util.Objects;
 
 /**
  * @author coderXshuai
@@ -85,5 +91,34 @@ public class BaseActivity extends AppCompatActivity {
             intent.putExtras(bundle);
         }
         startActivityForResult(intent, requestCode);
+    }
+
+    private AlertDialog alertDialog;
+
+    public void showLoading() {
+        showLoading("数据加载中...");
+    }
+
+    public void showLoading(String msg) {
+        alertDialog = new AlertDialog.Builder(this).create();
+        Objects.requireNonNull(alertDialog.getWindow()).setBackgroundDrawable(new ColorDrawable());
+        alertDialog.setCancelable(false);
+        alertDialog.setOnKeyListener((dialog, keyCode, event) -> {
+            if (keyCode == KeyEvent.KEYCODE_SEARCH || keyCode == KeyEvent.KEYCODE_BACK)
+                return true;
+            return false;
+        });
+        alertDialog.show();
+        DialogLoadingBinding binding = DialogLoadingBinding.inflate(getLayoutInflater());
+        binding.tvLoading.setText(msg);
+        alertDialog.setContentView(binding.getRoot());
+        alertDialog.setCanceledOnTouchOutside(false);
+    }
+
+    public void hideLoading() {
+        if (null != alertDialog && alertDialog.isShowing()) {
+            alertDialog.dismiss();
+        }
+        alertDialog = null;
     }
 }
